@@ -25,14 +25,15 @@ const connectDB = async () => {
         app.get('/products', async (req, res) => {
             const result = await productCollection.find({}).toArray();
             res.send(result);
-        })
+        });
 
         //get single Product
         app.get('/products/:id', async (req, res) => {
             const id = req.params.id;
             const result = await productCollection.findOne({ _id: new ObjectId(id) });
             res.send(result);
-        })
+        });
+
 
 
 
